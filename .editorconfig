@@ -1,0 +1,11 @@
+# editorconfig.org
+
+root = true
+
+# Apply to all files
+[*]
+
+indent_style: "space"
+indent_size: 3
+trim_trailing_whitespace: true
+end_of_line = lf

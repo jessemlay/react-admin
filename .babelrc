@@ -1,0 +1,9 @@
+{
+   "presets": [
+      ["es2015", { "modules": false }],
+      "react-app",
+      "flow",
+      "stage-0"
+   ],
+   "plugins": ["transform-class-properties", "transform-decorators-legacy"]
+}

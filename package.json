@@ -1,34 +1,37 @@
 {
-  "name": "versasuite-web",
-  "displayName": "VersaWeb",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^3.1.1",
-    "@material-ui/icons": "^3.0.1",
-    "prettier": "^1.14.3",
-    "prop-types": "^15.6.2",
-    "ra-data-json-server": "^2.3.2",
-    "ra-language-english": "^2.3.0",
-    "ra-language-spanish": "^1.0.0",
-    "react": "^16.5.2",
-    "react-admin": "^2.3.2",
-    "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5",
-    "styled-components": "^3.4.9"
-  },
-  "scripts": {
-    "precommit": "lint-staged",
-    "prettify:all": "prettier --write src/**/*.js",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,css,md}": [
-      "npm run prettify:all",
-      "git add"
-    ]
-  }
+   "name": "versasuite-web",
+   "displayName": "VersaWeb",
+   "version": "0.1.0",
+   "private": true,
+   "dependencies": {
+      "@material-ui/core": "^3.1.1",
+      "@material-ui/icons": "^3.0.1",
+      "prettier": "^1.14.3",
+      "prop-types": "^15.6.2",
+      "ra-data-json-server": "^2.3.2",
+      "ra-language-english": "^2.3.0",
+      "ra-language-spanish": "^1.0.0",
+      "react": "^16.5.2",
+      "react-admin": "^2.3.2",
+      "react-dom": "^16.5.2",
+      "react-scripts": "1.1.5",
+      "styled-components": "^3.4.9"
+   },
+   "scripts": {
+      "precommit": "lint-staged",
+      "prettify:all": "prettier --write src/**/*.js",
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
+   },
+   "lint-staged": {
+      "src/**/*.{js,jsx,json,css,md}": [
+         "npm run prettify:all",
+         "git add"
+      ]
+   },
+   "eslintConfig": {
+      "extends": "react-app"
+   }
 }
