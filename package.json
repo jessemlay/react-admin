@@ -6,7 +6,7 @@
    "dependencies": {
       "@material-ui/core": "^3.1.1",
       "@material-ui/icons": "^3.0.1",
-      "prettier": "^1.14.3",
+      "prettier": "1.14.3",
       "prop-types": "^15.6.2",
       "ra-data-json-server": "^2.3.2",
       "ra-language-english": "^2.3.0",
@@ -17,21 +17,51 @@
       "react-scripts": "1.1.5",
       "styled-components": "^3.4.9"
    },
+   "devDependencies": {
+      "@storybook/addon-actions": "^3.4.11",
+      "@storybook/addon-links": "^3.4.11",
+      "@storybook/addons": "^3.4.11",
+      "@storybook/react": "^3.4.11",
+      "babel-core": "^6.26.3",
+      "babel-runtime": "^6.26.0",
+      "enzyme": "^3.6.0",
+      "enzyme-adapter-react-16": "^1.5.0",
+      "eslint-plugin-prettier": "^2.6.2",
+      "flow-bin": "^0.81.0",
+      "husky": "^1.0.0-rc.15",
+      "lint-staged": "^7.3.0",
+      "ngrok": "^3.0.1",
+      "plop": "^2.1.0",
+      "react-test-renderer": "^16.5.2",
+      "storybook": "^1.0.0",
+      "webpack-bundle-analyzer": "^3.0.2"
+   },
    "scripts": {
       "precommit": "lint-staged",
-      "prettify:all": "prettier --write src/**/*.js",
+      "prettify:all": "prettier --write src/**/*.{js,jsx,json,css,md}",
+      "generate": "plop",
+      "start:tunnel": "ngrok http 3000 -host-header='localhost:3000'",
+      "storybook": "start-storybook -p 9009 -s public",
+      "build-storybook": "build-storybook -s public",
+      "analyze": "node bundle.js",
       "start": "react-scripts start",
       "build": "react-scripts build",
       "test": "react-scripts test --env=jsdom",
       "eject": "react-scripts eject"
    },
    "lint-staged": {
-      "src/**/*.{js,jsx,json,css,md}": [
-         "npm run prettify:all",
+      "*.{js,jsx,json,css,md}": [
+         "prettier --write",
          "git add"
       ]
    },
    "eslintConfig": {
-      "extends": "react-app"
+      "extends": "react-app",
+      "plugins": [
+         "prettier"
+      ],
+      "rules": {
+         "prettier/prettier": "error"
+      }
    }
 }
