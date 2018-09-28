@@ -52,8 +52,8 @@
       "eject": "react-scripts eject"
    },
    "lint-staged": {
-      "*.{js,jsx,json,css,md}": [
-         "prettier --write",
+      "src/**/*.{js,jsx,json,css,md}": [
+         "npm run prettify:all",
          "git add"
       ]
    },
