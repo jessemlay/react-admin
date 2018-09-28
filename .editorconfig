@@ -8,4 +8,4 @@ root = true
 indent_style: "space"
 indent_size: 3
 trim_trailing_whitespace: true
-end_of_line = lf
+end_of_line = crlf
