@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
    List,
    Edit,
@@ -13,7 +13,7 @@ import {
    SelectInput,
    SimpleForm,
    TextInput
-} from "react-admin";
+} from 'react-admin';
 
 export const PostList = props => (
    <List {...props}>
@@ -30,7 +30,7 @@ export const PostList = props => (
 );
 
 const PostTitle = ({ record }) => {
-   return <span>Post {record ? `"${record.title}"` : ""}</span>;
+   return <span>Post {record ? `"${record.title}"` : ''}</span>;
 };
 
 export const PostEdit = props => (

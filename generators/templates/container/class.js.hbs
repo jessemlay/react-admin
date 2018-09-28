@@ -1,0 +1,47 @@
+import React from 'react';
+{{#if wantActionsAndReducer}}
+import { connect, bindActionCreators } from "react-redux";
+{{/if}}
+import PropTypes from 'prop-types';
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+import messages from './{{properCase name}}messages';
+{{/if}}
+{{#if wantActionsAndReducer}}
+import * as {{properCase name}}Actions from "./actions";
+import selectors from "./selectors";
+{{/if}}
+
+class {{ properCase name }} extends {{{ type }}} {
+  render() {
+    return (
+      <div>
+      {{#if wantMessages}}
+        <FormattedMessage {...messages.header} />
+      {{/if}}
+      </div>
+    );
+  }
+}
+
+{{ properCase name }}.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+{{#if wantActionsAndReducer}}
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators({{properCase name}}Actions, dispatch),
+    dispatch
+  };
+};
+{{/if}}
+
+{{#if wantActionsAndReducer}}
+export default connect(
+  selectors,
+  mapDispatchToProps
+)({{properCase name}});
+{{else}}
+export default {{properCase name}}
+{{/if}}

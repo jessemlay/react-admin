@@ -1,0 +1,23 @@
+import { createSelector } from 'reselect';
+import { initialState } from './reducer';
+
+/**
+ * Direct selector to the {{ camelCase container }} state domain
+ */
+
+const select{{ properCase container }}Domain = state =>
+  state.get('{{ camelCase container }}', initialState);
+
+/**
+ * Other specific selectors
+ */
+
+/**
+ * Default selector used by {{ properCase container }}
+ */
+
+const makeSelect{{ properCase container }} = () =>
+  createSelector(select{{ properCase container }}Domain, substate => substate);
+
+export default makeSelect{{ properCase container }};
+export { select{{ properCase container }}Domain };

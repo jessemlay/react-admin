@@ -1,18 +1,17 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { propTypes, reduxForm, Field } from "redux-form";
-import { connect } from "react-redux";
-import compose from "recompose/compose";
-import styled from "styled-components";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import TextField from "@material-ui/core/TextField";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import BackgroundImage from "../../assets/image/bg-3.jpg";
-import { Notification, translate, userLogin } from "react-admin";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { propTypes, reduxForm, Field } from 'redux-form';
+import { connect } from 'react-redux';
+import compose from 'recompose/compose';
+import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import TextField from '@material-ui/core/TextField';
+import BackgroundImage from '../../assets/image/bg-3.jpg';
+import { Notification, translate, userLogin } from 'react-admin';
 
 const LoginPage = styled.div`
    background-image: url(${BackgroundImage});
@@ -85,7 +84,7 @@ class Login extends Component {
          auth,
          this.props.location.state
             ? this.props.location.state.nextPathname
-            : "/"
+            : '/'
       );
 
    render() {
@@ -101,18 +100,13 @@ class Login extends Component {
                            <StyledField
                               name="username"
                               component={renderInput}
-                              label={translate("ra.auth.username")}
+                              label={translate('ra.auth.username')}
                               disabled={isLoading}
-                              endAdornment={
-                                 <InputAdornment position="end">
-                                    Kg
-                                 </InputAdornment>
-                              }
                            />
                            <StyledField
                               name="password"
                               component={renderInput}
-                              label={translate("ra.auth.password")}
+                              label={translate('ra.auth.password')}
                               type="password"
                               disabled={isLoading}
                            />
@@ -128,20 +122,20 @@ class Login extends Component {
                                  {isLoading && (
                                     <CircularProgress size={25} thickness={2} />
                                  )}
-                                 {translate("ra.auth.sign_in")}
+                                 {translate('ra.auth.sign_in')}
                               </Button>
                            </StyledCardActions>
                            <Grid container alignItems="center">
                               <Grid item xs={6}>
                                  <a href="/account/register">
-                                    {" "}
-                                    Don't have an account?{" "}
+                                    {' '}
+                                    Don't have an account?{' '}
                                  </a>
                               </Grid>
                               <Grid item xs={6}>
                                  <a href="/account/register">
-                                    {" "}
-                                    Forgot password?{" "}
+                                    {' '}
+                                    Forgot password?{' '}
                                  </a>
                               </Grid>
                            </Grid>
@@ -152,17 +146,17 @@ class Login extends Component {
                <Notification />
                <p
                   style={{
-                     textAlign: "right",
-                     color: "white",
+                     textAlign: 'right',
+                     color: 'white',
                      marginBottom: 0
                   }}
                >
-                  {" "}
-                  VersaSuite™ 2018{" "}
+                  {' '}
+                  VersaSuite™ 2018
                </p>
-               <p style={{ textAlign: "right", color: "white" }}>
-                  {" "}
-                  Version {process.env.REACT_APP_VERSION}{" "}
+               <p style={{ textAlign: 'right', color: 'white' }}>
+                  {' '}
+                  Version {process.env.REACT_APP_VERSION}{' '}
                </p>
             </LoginBox>
          </LoginPage>
@@ -184,15 +178,15 @@ const mapStateToProps = state => ({ isLoading: state.admin.loading > 0 });
 const enhance = compose(
    translate,
    reduxForm({
-      form: "signIn",
+      form: 'signIn',
       validate: (values, props) => {
          const errors = {};
          const { translate } = props;
          if (!values.username) {
-            errors.username = translate("ra.validation.required");
+            errors.username = translate('ra.validation.required');
          }
          if (!values.password) {
-            errors.password = translate("ra.validation.required");
+            errors.password = translate('ra.validation.required');
          }
          return errors;
       }
